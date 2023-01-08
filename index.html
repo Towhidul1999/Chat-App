@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Project</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="name">
+    <button id="send" onclick="send()">Send</button> -->
+
+    <h1 id="bdata"></h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io('/sell');
+
+        //Recieve data server to client
+
+        // socket.on('myEvent', function (msg) {
+        //     document.getElementById('myTime').innerHTML = msg;
+        // });
+
+        //Send data client to server
+
+        // function send() {
+        //     let name = document.getElementById("name").value;
+        //     socket.emit('myName', name);
+        // }
+
+        //Recieve socket id from server
+
+        // socket.on("message", (id) => {
+        //     console.log(id);
+        // });
+
+        //Recieve broadcast data
+
+        // socket.on('myBroadcast', (data) => {
+        //     document.getElementById('bdata').innerHTML = data;
+        // })
+
+        //Recieve Rooms Boradcast data
+
+        socket.on('room', (data) => {
+            document.getElementById('bdata').innerHTML = data;
+        })
+
+    </script>
+
+</body>
+
+</html>
